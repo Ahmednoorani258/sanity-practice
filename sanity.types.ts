@@ -297,7 +297,7 @@ export type ALL_PRODUCTS_QUERYResult = Array<{
 
 // Source: ./src/sanity/lib/product/getAllProductsBySlug.ts
 // Variable: PRODUCTS_BY_ID_QUERY
-// Query: *[_type == "product" && slug.current == $slug ] | order(name asc) [0]
+// Query: *[_type == "product" && slug.current == $slug] | order(name asc) [0]
 export type PRODUCTS_BY_ID_QUERYResult = {
   _id: string;
   _type: "product";
@@ -387,7 +387,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     "\n        *[_type == \"category\" ] | order(name asc)\n\n        ": ALL_CATEGORIES_QUERYResult;
     "\n        *[_type == \"product\" ] | order(name asc)\n\n        ": ALL_PRODUCTS_QUERYResult;
-    "\n        *[_type == \"product\" && slug.current == $slug ] | order(name asc) [0]\n\n        ": PRODUCTS_BY_ID_QUERYResult;
+    "\n    *[_type == \"product\" && slug.current == $slug] | order(name asc) [0]\n  ": PRODUCTS_BY_ID_QUERYResult;
     "\n        *[_type == \"product\" && name match $searchParam ] | order(name asc)\n        ": PRODUCT_SEARCH_QUERYResult;
     "\n        *[_type == \"salesType\" && isActive == true && couponCode ==  $couponCode ] | order(validFrom desc)[0]\n        ": ACTIVE_SALE_QUERYResult;
   }
